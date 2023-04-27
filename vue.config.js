@@ -4,5 +4,6 @@
 // })
 
 module.exports = {
+  publicPath: "/pacct",
   outputDir: "docs",
 }
