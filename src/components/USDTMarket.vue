@@ -209,7 +209,7 @@ export default {
       const ws = new WebSocket("wss://api.upbit.com/websocket/v1");
 
       ws.onopen = () => {
-        ws.send(
+       ws.send(
           `${JSON.stringify([
             { ticket: uuidv4() },
             { type: "ticker", codes: symbols.value },
