@@ -216,8 +216,8 @@ export default {
     const coins2 = ref([]);
     const symbols = ref([]);
 
-    onMounted(() => {
-      axios.get("https://api.upbit.com/v1/market/all").then((result) => {
+    onMounted(async() => {
+     await axios.get("https://api.upbit.com/v1/market/all").then((result) => {
         let newcoins = result.data.filter((result) => {
           return result.market.indexOf("KRW-") != -1;
         });
