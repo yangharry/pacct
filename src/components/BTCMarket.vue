@@ -43,7 +43,7 @@
   </div>
 </template>
 <script>
-import { ref, onMounted } from "vue";
+import { ref, onBeforeMount } from "vue";
 import axios from "axios";
 import { numToKorean } from "num-to-korean";
 import { v4 as uuidv4 } from "uuid";
@@ -199,7 +199,7 @@ export default {
     let symbols = ref([]);
     let krwbtc = ref([]);
 
-    onMounted(async () => {
+    onBeforeMount(async () => {
       await axios.get("https://api.upbit.com/v1/market/all").then((result) => {
         let newcoins = result.data.filter((result) => {
           return result.market.indexOf("BTC-") != -1;
